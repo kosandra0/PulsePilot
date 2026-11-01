@@ -2,6 +2,32 @@
 
 All notable changes to PulsePilot.
 
+## [1.1.1] — 2026-11-01 (pre-release)
+
+Macro recording and playback fixes.
+
+### Fixed
+- **Playback did nothing until you clicked somewhere.** When PulsePilot minimised itself for playback, the keyboard
+  focus could stay on PulsePilot's hidden window, so replayed keys went nowhere. PulsePilot now hands the focus to
+  the app you were using (the window right behind it) when it minimises.
+- **Recordings replayed inaccurately / switched to the wrong window.** Recording used to keep PulsePilot open in
+  front, so you had to Alt+Tab to your app — and that Alt+Tab was recorded and replayed into a different window
+  order. **PulsePilot now minimises itself while you record too** (and hands the focus to your app), so a recording
+  starts exactly where playback will start.
+- **Scrolls missing from recordings.** Scrolling over PulsePilot's own window is never recorded; with PulsePilot
+  open while recording, scrolls often landed on it. With PulsePilot minimised during recording, your scrolls go to
+  your app and are recorded.
+- **Forgetting to save a recording.** When a recording ends (Stop, the hotkey, Emergency Stop or Discard),
+  PulsePilot comes back on its own and shows the recording so you can **Save** it.
+- History could show a stopped Auto Clicker or Key Presser as "completed" instead of "cancelled".
+
+### Added
+- Tray menu: **Start/Stop Recording**.
+- A notification when recording starts from the window, telling you how to stop it (your hotkey or the tray menu).
+
+### Changed
+- The setting is now called **"Minimise PulsePilot while recording and playing macros"** (Settings; on by default).
+
 ## [1.1.0] — 2026-11-01 (pre-release)
 
 PulsePilot now keeps working comfortably in the background.
