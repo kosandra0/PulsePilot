@@ -6,7 +6,7 @@ PulsePilot is a free Windows desktop app that automates your mouse and keyboard:
 holder, automatic key pressing and key holding, global hotkeys, and a keyboard/mouse macro recorder with playback
 and a timeline editor. Everything runs locally on your PC — no account, no cloud, no telemetry.
 
-> **Status: v1.1.0 pre-release.** PulsePilot works and has been tested, but this build is still in final acceptance
+> **Status: v1.1.1 pre-release.** PulsePilot works and has been tested, but this build is still in final acceptance
 > testing. Please report any problem in [Issues](../../issues). See what's new in the [Changelog](CHANGELOG.md).
 
 ---
@@ -17,9 +17,9 @@ Go to **[Releases](../../releases/latest)** and download **one** of these:
 
 | File | Use it if… |
 |---|---|
-| **`PulsePilot_1.1.0_x64-setup.exe`** (recommended) | You want a normal installation. Installs for your user only, no administrator rights needed, adds Start Menu and desktop shortcuts. |
-| `PulsePilot_1.1.0_x64_en-US.msi` | You prefer an MSI package (installs for all users; needs administrator rights). |
-| `PulsePilot_1.1.0_x64_portable.exe` | You don't want to install anything. Just run the file. |
+| **`PulsePilot_1.1.1_x64-setup.exe`** (recommended) | You want a normal installation. Installs for your user only, no administrator rights needed, adds Start Menu and desktop shortcuts. |
+| `PulsePilot_1.1.1_x64_en-US.msi` | You prefer an MSI package (installs for all users; needs administrator rights). |
+| `PulsePilot_1.1.1_x64_portable.exe` | You don't want to install anything. Just run the file. |
 
 **Requirements:** Windows 10 or 11, 64-bit. PulsePilot uses Microsoft Edge WebView2, which is already part of
 Windows 11 and up-to-date Windows 10 (the installer downloads it if it is missing).
@@ -31,7 +31,7 @@ anyway**. If your antivirus is cautious about tools that send keyboard and mouse
 check that your download is genuine by comparing its SHA-256 with `SHA256SUMS.txt` in the release:
 
 ```powershell
-Get-FileHash .\PulsePilot_1.1.0_x64-setup.exe
+Get-FileHash .\PulsePilot_1.1.1_x64-setup.exe
 ```
 
 ---
@@ -76,10 +76,11 @@ Change them in **Hotkey Manager**. On laptops you may need to hold **Fn** for th
 
 - **Primary / secondary button:** PulsePilot follows your Windows mouse setting (left- or right-handed). You can
   override it in **Settings → Primary mouse button**.
-- **Macros replay positions, not windows.** Playback repeats your keystrokes and the exact screen positions you
-  clicked. Arrange your windows the way they were when you recorded, bring the right one to the front, and use
-  **Delay before playback** if you need a moment. PulsePilot minimises itself while a macro plays and comes back
-  afterwards (you can turn this off in Settings).
+- **Recording and playing macros:** press **Record** (or your hotkey) and PulsePilot steps aside (minimises) and
+  gives the focus back to the app you were using — just do your actions there. Stop with your hotkey or the tray menu
+  (**Start/Stop Recording**); PulsePilot comes back so you can **Save**. Playback also minimises PulsePilot and starts
+  in the app you were using. Macros repeat keys and screen positions, not windows, so arrange your windows the way they
+  were when you recorded. Scrolling over PulsePilot's own window is never recorded.
 - **Runs in the background:** closing the window (red ×) keeps PulsePilot in the system tray, and all hotkeys keep
   working. The tray icon shows a **green** dot while a task runs, **amber** when paused and **red** while recording.
   While the window is hidden, a Windows notification confirms each hotkey action. To quit: right-click the tray icon →
