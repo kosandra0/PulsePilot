@@ -6,8 +6,8 @@ PulsePilot is a free Windows desktop app that automates your mouse and keyboard:
 holder, automatic key pressing and key holding, global hotkeys, and a keyboard/mouse macro recorder with playback
 and a timeline editor. Everything runs locally on your PC — no account, no cloud, no telemetry.
 
-> **Status: v1.0.0 pre-release.** PulsePilot works and has been tested, but this build is still in final acceptance
-> testing. Please report any problem in [Issues](../../issues).
+> **Status: v1.1.0 pre-release.** PulsePilot works and has been tested, but this build is still in final acceptance
+> testing. Please report any problem in [Issues](../../issues). See what's new in the [Changelog](CHANGELOG.md).
 
 ---
 
@@ -17,9 +17,9 @@ Go to **[Releases](../../releases/latest)** and download **one** of these:
 
 | File | Use it if… |
 |---|---|
-| **`PulsePilot_1.0.0_x64-setup.exe`** (recommended) | You want a normal installation. Installs for your user only, no administrator rights needed, adds Start Menu and desktop shortcuts. |
-| `PulsePilot_1.0.0_x64_en-US.msi` | You prefer an MSI package (installs for all users; needs administrator rights). |
-| `PulsePilot_1.0.0_x64_portable.exe` | You don't want to install anything. Just run the file. |
+| **`PulsePilot_1.1.0_x64-setup.exe`** (recommended) | You want a normal installation. Installs for your user only, no administrator rights needed, adds Start Menu and desktop shortcuts. |
+| `PulsePilot_1.1.0_x64_en-US.msi` | You prefer an MSI package (installs for all users; needs administrator rights). |
+| `PulsePilot_1.1.0_x64_portable.exe` | You don't want to install anything. Just run the file. |
 
 **Requirements:** Windows 10 or 11, 64-bit. PulsePilot uses Microsoft Edge WebView2, which is already part of
 Windows 11 and up-to-date Windows 10 (the installer downloads it if it is missing).
@@ -31,7 +31,7 @@ anyway**. If your antivirus is cautious about tools that send keyboard and mouse
 check that your download is genuine by comparing its SHA-256 with `SHA256SUMS.txt` in the release:
 
 ```powershell
-Get-FileHash .\PulsePilot_1.0.0_x64-setup.exe
+Get-FileHash .\PulsePilot_1.1.0_x64-setup.exe
 ```
 
 ---
@@ -80,7 +80,11 @@ Change them in **Hotkey Manager**. On laptops you may need to hold **Fn** for th
   clicked. Arrange your windows the way they were when you recorded, bring the right one to the front, and use
   **Delay before playback** if you need a moment. PulsePilot minimises itself while a macro plays and comes back
   afterwards (you can turn this off in Settings).
-- **Close to tray:** enable **Settings → Close to system tray** to keep your hotkeys working with the window closed.
+- **Runs in the background:** closing the window (red ×) keeps PulsePilot in the system tray, and all hotkeys keep
+  working. The tray icon shows a **green** dot while a task runs, **amber** when paused and **red** while recording.
+  While the window is hidden, a Windows notification confirms each hotkey action. To quit: right-click the tray icon →
+  **Exit**.
+- **Auto Clicker position:** with **Fixed screen position** it clicks that exact spot, not where your mouse is.
 - **Privacy:** PulsePilot only watches your keyboard and mouse while you are recording. Don't record passwords.
 
 ## Troubleshooting
@@ -88,6 +92,7 @@ Change them in **Hotkey Manager**. On laptops you may need to hold **Fn** for th
 | Problem | Fix |
 |---|---|
 | A key or button seems stuck | Press **Ctrl + Alt + F12** (Emergency Stop) or **Ctrl + Alt + F11**. |
+| A hotkey seems to do nothing | Look at the notification or the tray icon dot. With **Fixed screen position** the Auto Clicker clicks that spot, not where your mouse is. If PulsePilot was closed with tray mode off, it is not running — start it again. |
 | Clicks or keys do nothing in one program | That program probably runs as administrator; Windows blocks input into it. Run it normally, or run PulsePilot as administrator. |
 | A hotkey shows "Failed" | Another program already uses that combination — pick another one in Hotkey Manager. |
 | A game ignores PulsePilot | Some games and anti-cheat systems ignore simulated input. PulsePilot does not try to bypass them. |
