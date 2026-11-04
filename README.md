@@ -6,7 +6,7 @@ PulsePilot is a free Windows desktop app that automates your mouse and keyboard:
 holder, automatic key pressing and key holding, global hotkeys, and a keyboard/mouse macro recorder with playback
 and a timeline editor. Everything runs locally on your PC — no account, no cloud, no telemetry.
 
-> **Status: v1.1.1 pre-release.** PulsePilot works and has been tested, but this build is still in final acceptance
+> **Status: v2.0.0 pre-release.** Color Hunter is included as a preview and is **under development**. PulsePilot works and has been tested, but this build is still in final acceptance
 > testing. Please report any problem in [Issues](../../issues). See what's new in the [Changelog](CHANGELOG.md).
 
 ---
@@ -17,9 +17,9 @@ Go to **[Releases](../../releases/latest)** and download **one** of these:
 
 | File | Use it if… |
 |---|---|
-| **`PulsePilot_1.1.1_x64-setup.exe`** (recommended) | You want a normal installation. Installs for your user only, no administrator rights needed, adds Start Menu and desktop shortcuts. |
-| `PulsePilot_1.1.1_x64_en-US.msi` | You prefer an MSI package (installs for all users; needs administrator rights). |
-| `PulsePilot_1.1.1_x64_portable.exe` | You don't want to install anything. Just run the file. |
+| **`PulsePilot_2.0.0_x64-setup.exe`** (recommended) | You want a normal installation. Installs for your user only, no administrator rights needed, adds Start Menu and desktop shortcuts. |
+| `PulsePilot_2.0.0_x64_en-US.msi` | You prefer an MSI package (installs for all users; needs administrator rights). |
+| `PulsePilot_2.0.0_x64_portable.exe` | You don't want to install anything. Just run the file. |
 
 **Requirements:** Windows 10 or 11, 64-bit. PulsePilot uses Microsoft Edge WebView2, which is already part of
 Windows 11 and up-to-date Windows 10 (the installer downloads it if it is missing).
@@ -31,7 +31,7 @@ anyway**. If your antivirus is cautious about tools that send keyboard and mouse
 check that your download is genuine by comparing its SHA-256 with `SHA256SUMS.txt` in the release:
 
 ```powershell
-Get-FileHash .\PulsePilot_1.1.1_x64-setup.exe
+Get-FileHash .\PulsePilot_2.0.0_x64-setup.exe
 ```
 
 ---
@@ -45,6 +45,7 @@ Get-FileHash .\PulsePilot_1.1.1_x64-setup.exe
 | **Keyboard → Auto Presser** | Presses a key, a sequence of keys (with delays) or a combination such as Ctrl + S, repeatedly. |
 | **Keyboard → Key Holder** | Keeps keys held down (*Hold*), or holds modifiers and repeats other keys like a physically held key (*Repeat*). |
 | **Macro Studio** | Records your keyboard, clicks, mouse movement and scrolling, then plays it back at 0.25×–4× speed, with loops and delays. Edit recordings in a timeline editor; import and export them. |
+| **Color Hunter** *(under development)* | Pick an exact screen colour and click every matching spot: Spawn Detection (click each new appearance) or Loop Detection (repeat). Exact RGB only. Results may be incomplete while this module is being finished. |
 | **Hotkey Manager** | Start and stop everything from any application with global shortcuts you can change. |
 | **Profiles, History, Dashboard** | Separate setups for different tasks, a local log of every run, and statistics. |
 

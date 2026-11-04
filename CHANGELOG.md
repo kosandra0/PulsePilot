@@ -1,6 +1,31 @@
 # Changelog
 
 All notable changes to PulsePilot.
+## [2.0.0] — 2026-11-04 (major)
+
+Adds the **Color Hunter** module. Color Hunter is **under development**: its exact-colour detection and clicking have
+not been verified on every display setup, and its results may be incomplete. Auto Clicker, Click Holder, Keyboard
+Automation, Macro Studio, Hotkey Manager, Profiles, History, Settings and Emergency STOP are unchanged.
+
+### Added
+- **Color Hunter** (under development): pick a colour from the screen or enter RGB; exact RGB matching only (no tolerance).
+  Scans the whole desktop, groups matching pixels into 8-connected regions, and clicks each region's centre.
+  - *Spawn Detection* clicks each region once when it appears.
+  - *Loop Detection* repeatedly clicks visible regions, one scan cycle at a time.
+  - Click delay, scan interval, unlimited or timed runtime; stop, pause/resume and Emergency STOP.
+  - **Test Exact RGB** diagnostic: counts exact-matching pixels and regions without clicking.
+  - Hotkeys (defaults): Ctrl+Alt+F1 start/stop, Ctrl+Alt+F2 pause/resume, Ctrl+Alt+F4 pick colour.
+
+### Fixed
+- Colour picker: the colour is sampled from a desktop snapshot taken before the picker overlay opens, not after it closes.
+- Color Hunter re-checks each target's pixel just before clicking and skips it if it has moved or vanished.
+
+### Notes
+- Color Hunter is **under development**. Known limits: gradient or anti-aliased targets match only their exact-colour
+  pixels, so one visible object can produce several small regions; live desktop behaviour across monitors and display
+  scaling is not yet verified.
+
+
 
 ## [1.1.1] — 2026-11-01 (pre-release)
 
